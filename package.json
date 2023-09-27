@@ -1,0 +1,45 @@
+{
+  "name": "artistseye-solo-project-",
+  "version": "1.0.0",
+  "description": "Online digital art portfolio",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johnny-Arroyo/ArtistsEye-Solo-Project-.git"
+  },
+  "keywords": [
+    "Art",
+    "Portfolio",
+    "Album",
+    "Artist"
+  ],
+  "author": "John Arroyo II",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Johnny-Arroyo/ArtistsEye-Solo-Project-/issues"
+  },
+  "homepage": "https://github.com/Johnny-Arroyo/ArtistsEye-Solo-Project-#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.2",
+    "node-fetch": "^3.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.16.0",
+    "redux": "^4.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.20",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15",
+    "nodemon": "^3.0.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-hot-middleware": "^2.25.4"
+  }
+}
