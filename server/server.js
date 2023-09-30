@@ -12,16 +12,16 @@ mongoose.connection.on('error', (error) => {
   console.error('MongoDB connection error', error);
 });
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 
 app.get('/', (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, '../build', 'index.html'));
+  res.setHeader('Content-Type', 'text/html').status(200).sendFile(path.join(__dirname, '../dist', 'index.html'));
 });
 
-// app.get('/myportfolio', (req, res) => {
-//   res.status(200).sendFile(path.join(__dirname, '../client/src/Main.js'))
-// });
+app.get('/myportfolio', (req, res) => {
+  res.status(200).sendFile(path.join(__dirname, '../client/pages/myportfolio.js'))
+});
 
 // app.post('/myportfolio', (req, res) => {
 //   res.status(200)

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from 'react'
+import { useState } from "react";
 
 const ImageUploadForm = () => {
   const [image, setImage] = useState(null);
@@ -24,8 +25,8 @@ const ImageUploadForm = () => {
     setMedium(event.target.value);
   }
 
-  const handleSumbit = (event) => {
-    event.preventDefualt();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     const formData = new FormData();
     formData.append("title", title);
@@ -49,48 +50,50 @@ const ImageUploadForm = () => {
       console.error("Error requesting image upload", error);
     }
   };
-
+  
   return (
     <div>
-      <h2>+ ART</h2>
-      <form onSubmit={handleSubmit}>
+      {image && (
         <div>
-          <label htmlFor="imageUpload">Upload Image (.jpeg or .png)</label>
-          <input
+          <h3>Image Preview:</h3>
+          <img src={URL.createObjectURL(image)} alt="Uploaded" width="350" />
+        </div>  
+      )}
+      <form className="imageForm" onSubmit={handleSubmit}>
+        <div>
+          <label className='custom-file-upload'>
+            <input
             type="file"
             accept=".jpeg, .jpg, .png"
             id="imageUpload"
             onChange={handleImageUpload}
-          />
+            />
+          </label>
         </div>
         <div>
-          <label htmlFor="title">Title:</label>
+          {/* <label htmlFor="title">Title:</label> */}
           <input
             type="text"
             id="title"
+            placeholder='Title'
             value={title}
             onChange={handleTitleChange}
             required
           />  
         </div>
         <div>
-          <label htmlFor="medium">Medium:</label>
+          {/* <label htmlFor="medium">Medium:</label> */}
           <input
             type="text"
             id="medium"
+            placeholder='Medium'
             value={medium}
             onChange={handleMediumChange}
             required
           />  
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Add Art</button>
       </form>
-      {image && (
-        <div>
-          <h3>Image Preview:</h3>
-          <img src={URL.createObjectURL(image)} alt="Uploaded" width="200" />
-        </div>  
-      )}
     </div>
   );
 }
