@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
+//const cors = require('cors');
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 //connect to MongoDB
 mongoose.connect('mongodb+srv://jta2:VaporKeys2020@soloproject.suuycvl.mongodb.net/?retryWrites=true&w=majority');

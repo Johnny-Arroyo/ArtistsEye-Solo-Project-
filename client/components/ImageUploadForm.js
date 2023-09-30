@@ -9,7 +9,7 @@ const ImageUploadForm = () => {
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     //validate file type
-    if (file && (file.type === 'image/jpeg' || file.type === 'image/')) {
+    if (file && (file.type === 'image/jpeg' || file.type === 'image/png')) {
       setImage(file);
     } else {
       setImage(null);
