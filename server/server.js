@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 
 app.get('/', (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, '../build/index.html'))
+  res.status(200).sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
 // app.get('/myportfolio', (req, res) => {
